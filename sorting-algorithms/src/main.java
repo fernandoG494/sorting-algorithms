@@ -1,6 +1,6 @@
+
+import Tools.FileManager;
 import java.io.IOException;
-import java.util.ArrayList;
-import Tools.Tokenizer;
 
 /**
  *
@@ -10,15 +10,13 @@ public class main {
 
     /**
      * @param args the command line arguments
-     * @throws IOException
      */
     public static void main(String args[]) throws IOException {
         System.out.println("Sorting Algorithms \n");
-        // Token init
-        Tokenizer token = new Tokenizer();
-        ArrayList<Double> numbers = token.TokenNumbers(token.getFile());
-        System.out.println(numbers.size());
-
+        // File Manager
+        FileManager manager = new FileManager();
+        manager.number100File();
+        
         // Algorithms
         
         // Datasets
