@@ -1,6 +1,9 @@
 
+import Algorithms.QuickSort;
 import Tools.FileManager;
+import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  *
@@ -10,17 +13,24 @@ public class main {
 
     /**
      * @param args the command line arguments
+     * @throws java.io.IOException
      */
     public static void main(String args[]) throws IOException {
-        System.out.println("Sorting Algorithms \n");
+        System.out.println("\tSorting Algorithms");
+        ArrayList<Integer> numbers = new ArrayList<>();
+        ArrayList<Integer> sorted = new ArrayList<>();
+        
         // File Manager
         FileManager manager = new FileManager();
-        manager.number100File();
+        File file = manager.getFile();
+        numbers = manager.getLinesContent(file, numbers);
+        System.out.println(numbers);
         
-        // Algorithms
+        // Sorting
+        QuickSort quick = new QuickSort();
+        sorted = quick.HalfPivot(numbers, 0, numbers.size() - 1);
         
-        // Datasets
-        
+        // Printing results
+        System.out.println(sorted);
     }
-    
 }
